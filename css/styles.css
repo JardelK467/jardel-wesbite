@@ -1,9 +1,36 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  color-scheme: dark;
+  --teal: #0f766e;
+  --teal-text: #5eead4;
+  --red: #e63946;
+  --page: #0a0a0a;
+  --surface: #0e0e0e;
+  --surface-hover: #141414;
+  --line: #242424;
+  --text: #f0f0f0;
+  --muted: #a5adad;
+  --subtle: #7f8989;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+    --page: #f6faf9;
+    --surface: #ffffff;
+    --surface-hover: #edf5f3;
+    --line: #c4d7d4;
+    --text: #173331;
+    --muted: #405c59;
+    --subtle: #56736f;
+    --teal-text: #0f766e;
+  }
+}
 
 body {
   font-family: 'Inter', sans-serif;
-  background: #0a0a0a;
-  color: #f0f0f0;
+  background: var(--page);
+  color: var(--text);
   line-height: 1.6;
 }
 
@@ -75,6 +102,82 @@ body {
   max-width: 720px;
   margin: 0 auto;
   padding: 3rem 1.5rem 6rem;
+}
+
+.home-page { min-height: 100svh; }
+.home-hub {
+  width: min(100% - 3rem, 1040px);
+  min-height: 100svh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.home-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+}
+.home-nav { display: flex; gap: 1.25rem; flex-wrap: wrap; justify-content: flex-end; }
+.home-nav a {
+  color: var(--muted);
+  font-size: 0.82rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.home-nav a:hover, .home-nav a:focus-visible { color: var(--teal-text); }
+.home-hero {
+  width: min(100%, 620px);
+  margin: auto 0;
+  padding: 3rem 0 4rem;
+}
+.home-hero .hero-photo { margin-bottom: 1.5rem; }
+.home-hero .hero-subtitle { background: none; color: var(--teal-text); -webkit-text-fill-color: currentColor; }
+.home-hero .hero-sub { color: var(--muted); }
+.home-hero .socials { margin-top: 1.75rem; }
+.home-hero .socials a { color: var(--muted); border-color: var(--line); }
+.home-hero .socials a:hover, .home-hero .socials a:focus-visible { color: var(--text); border-color: var(--teal-text); }
+
+.page-shell { padding-top: 1.5rem; }
+.page-header { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.page-nav { display: flex; gap: 1.25rem; flex-wrap: wrap; justify-content: flex-end; }
+.page-nav a { color: var(--muted); font-size: 0.82rem; text-decoration: none; }
+.page-nav a:hover, .page-nav a:focus-visible { color: var(--teal-text); }
+.page-intro { padding: 5rem 0 3rem; max-width: 620px; }
+.page-intro h1 { font-size: clamp(2.4rem, 7vw, 4.5rem); line-height: 1.05; letter-spacing: -0.03em; }
+.page-intro > p:last-child { color: var(--muted); font-size: 1.05rem; margin-top: 1rem; }
+.page-section { margin-top: 3rem; }
+.page-section + .page-section { margin-top: 3.5rem; }
+
+.project-row, .now-playing, .book-row, .game-card, .tech-card, .status-card { background: var(--surface); }
+.project-row:hover, .now-playing:hover, .book-row:hover, .game-card:hover, .tech-card:hover { background: var(--surface-hover); }
+.project-name, .exp-company, .book-title, .game-title, .tech-name, .now-playing-track { color: var(--text); }
+.project-desc, .exp-role, .book-author, .game-platform, .tech-desc, .now-playing-artist { color: var(--muted); }
+.section-label { color: var(--subtle); }
+.tag, .projects, .book-list, .now-playing, .game-card, .tech-card, .status-card { border-color: var(--line); }
+.tag, .book-status { color: var(--muted); border-color: var(--line); }
+.now-playing-link { color: var(--teal-text); }
+.now-playing-link:hover { color: var(--text); }
+.exp-link { color: var(--subtle); }
+.exp-link:hover { color: var(--teal-text); }
+.status-tag.in-dev { border-color: #805c20; color: #f0c36a; background: rgba(230, 164, 62, 0.1); }
+.status-tag.unpublished { border-color: #176052; color: #69d4c7; background: rgba(15, 118, 110, 0.12); }
+.status-tag.in-dev .status-dot-indicator { background: #f0c36a; box-shadow: 0 0 6px rgba(240, 195, 106, 0.5); }
+.status-tag.unpublished .status-dot-indicator { background: #69d4c7; box-shadow: 0 0 6px rgba(105, 212, 199, 0.5); }
+
+@media (max-width: 600px) {
+  .home-hub { width: min(100% - 2rem, 1040px); }
+  .home-header { align-items: flex-start; gap: 1rem; }
+  .home-nav { gap: 0.65rem 1rem; }
+  .home-hero { padding: 2rem 0 3rem; }
+  .home-hero .hero-name { font-size: clamp(2.8rem, 13vw, 4.5rem); }
+}
+
+@media (max-width: 480px) {
+  .page-header { align-items: flex-start; }
+  .page-nav { gap: 0.65rem 1rem; }
+  .page-intro { padding: 3.5rem 0 2rem; }
+  .page-intro h1 { font-size: 2.5rem; }
 }
 
 .hero { padding: 3.5rem 0 2.5rem; }
