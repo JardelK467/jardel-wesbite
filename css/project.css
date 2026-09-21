@@ -2,11 +2,11 @@
 
 .back-link {
   font-size: 0.85rem;
-  color: #666;
+  color: var(--muted);
   text-decoration: none;
   transition: color 0.2s;
 }
-.back-link:hover { color: #f0f0f0; }
+.back-link:hover { color: var(--text); }
 
 /* Hero */
 .project-hero {
@@ -15,7 +15,7 @@
 
 .project-meta {
   font-size: 0.7rem;
-  color: #555;
+  color: var(--subtle);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-bottom: 1rem;
@@ -26,13 +26,13 @@
   font-weight: 800;
   line-height: 1.05;
   letter-spacing: -0.03em;
-  color: #f0f0f0;
+  color: var(--text);
   margin-bottom: 1rem;
 }
 
 .project-tagline {
   font-size: 1.05rem;
-  color: #888;
+  color: var(--muted);
   max-width: 520px;
   line-height: 1.6;
   margin-bottom: 1.5rem;
@@ -53,7 +53,7 @@
 
 .store-link {
   font-size: 0.85rem;
-  color: #666;
+  color: var(--muted);
   text-decoration: none;
   border: 1px solid #2a2a2a;
   padding: 6px 16px;
@@ -61,8 +61,8 @@
   transition: all 0.2s;
 }
 .store-link:hover {
-  color: #f0f0f0;
-  border-color: #666;
+  color: var(--text);
+  border-color: var(--muted);
 }
 
 /* Sections */
@@ -72,7 +72,7 @@
 
 .project-body {
   font-size: 0.95rem;
-  color: #bbb;
+  color: var(--muted);
   line-height: 1.7;
   max-width: 580px;
   margin-bottom: 1rem;
@@ -81,7 +81,7 @@
 .project-tbc {
   color: #555;
   font-style: italic;
-  border-left: 2px solid #2a2a2a;
+  border-left: 2px solid var(--line);
   padding-left: 1rem;
 }
 
@@ -116,15 +116,15 @@
 /* Screenshots placeholder */
 .screenshots-placeholder {
   padding: 3rem 2rem;
-  background: #0e0e0e;
-  border: 1px dashed #1e1e1e;
+  background: var(--surface);
+  border: 1px dashed var(--line);
   border-radius: 12px;
   text-align: center;
 }
 
 .screenshots-placeholder p {
   font-size: 0.85rem;
-  color: #444;
+  color: var(--subtle);
 }
 
 /* Tech grid */
@@ -135,30 +135,30 @@
 }
 
 .tech-card {
-  background: #0e0e0e;
-  border: 1px solid #1e1e1e;
+  background: var(--surface);
+  border: 1px solid var(--line);
   border-radius: 10px;
   padding: 16px;
   transition: background 0.15s;
 }
-.tech-card:hover { background: #141414; }
+.tech-card:hover { background: var(--surface-hover); }
 
 .tech-name {
   font-size: 0.9rem;
   font-weight: 500;
-  color: #e0e0e0;
+  color: var(--text);
   margin-bottom: 4px;
 }
 
 .tech-desc {
   font-size: 0.75rem;
-  color: #555;
+  color: var(--muted);
 }
 
 /* Status card */
 .status-card {
-  background: #0e0e0e;
-  border: 1px solid #1e1e1e;
+  background: var(--surface);
+  border: 1px solid var(--line);
   border-radius: 12px;
   overflow: hidden;
 }
@@ -168,7 +168,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 12px 20px;
-  border-bottom: 1px solid #1a1a1a;
+  border-bottom: 1px solid var(--line);
 }
 
 .status-row:last-child {
@@ -177,12 +177,12 @@
 
 .status-key {
   font-size: 0.8rem;
-  color: #555;
+  color: var(--muted);
 }
 
 .status-val {
   font-size: 0.85rem;
-  color: #ccc;
+  color: var(--text);
   font-weight: 500;
 }
 
@@ -193,20 +193,20 @@
   align-items: center;
   margin-top: 4rem;
   padding: 2rem 0;
-  border-top: 1px solid #1a1a1a;
+  border-top: 1px solid var(--line);
 }
 
 .back-to-projects,
 .next-project {
   font-size: 0.85rem;
-  color: #666;
+  color: var(--muted);
   text-decoration: none;
   transition: color 0.2s;
 }
 
 .back-to-projects:hover,
 .next-project:hover {
-  color: #f0f0f0;
+  color: var(--text);
 }
 
 @media (max-width: 480px) {
